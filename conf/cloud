@@ -7,7 +7,7 @@ display_ssh_output: False
 protocol: ipv4
 script_args: -LP git 2015.5
 minion:
-  master: intra.salt.gtmanfred.com
+  master: <master>
   #startup_states: highstate
   mysql.default_file: '/root/.my.cnf'
   mine_functions:

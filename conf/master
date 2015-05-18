@@ -1,4 +1,4 @@
-interface: 192.168.4.2
+interface: <private interface>
 fileserver_backend:
   - git
   - roots
