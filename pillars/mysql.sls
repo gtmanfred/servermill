@@ -11,3 +11,6 @@ replication:
   - users:
       replicant:
         grants: "REPLICATION SLAVE"
+
+private:
+  - network: '192.168.4.0/24'

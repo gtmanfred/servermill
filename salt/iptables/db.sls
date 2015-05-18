@@ -41,7 +41,7 @@ iptables rules mysql:
       - tcp
     - proto: tcp
     - dport: 3306
-    - source: 192.168.4.0/23
+    - source: "{{ salt['pillar.get']('private:network', '0.0.0.0/0') }}"
     - connstate: NEW
     - jump: ACCEPT
 
