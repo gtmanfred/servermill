@@ -18,11 +18,11 @@ def installed(name, path, user, admin_user, admin_password, admin_email, title, 
 
     if check:
         ret['result'] = True
-        ret['result'] = 'Plugin already activated: {0}'.format(name)
+        ret['comment'] = 'Plugin already activated: {0}'.format(name)
         return ret
     elif __opts__['test']:
         ret['result'] = None
-        ret['result'] = 'Wordpress will be installed: {0}'.format(name)
+        ret['comment'] = 'Wordpress will be installed: {0}'.format(name)
         return ret
 
     resp = __salt__['wordpress.install'](path, user, admin_user, admin_password, admin_email, title, url)
@@ -48,11 +48,11 @@ def activated(name, path, user):
 
     if check['status'] == 'active':
         ret['result'] = True
-        ret['result'] = 'Plugin already activated: {0}'.format(name)
+        ret['comment'] = 'Plugin already activated: {0}'.format(name)
         return ret
     elif __opts__['test']:
         ret['result'] = None
-        ret['result'] = 'Plugin will be activated: {0}'.format(name)
+        ret['comment'] = 'Plugin will be activated: {0}'.format(name)
         return ret
 
     resp = __salt__['wordpress.activate'](name, path, user)
@@ -86,11 +86,11 @@ def deactivated(name, path, user):
 
     if check['status'] == 'inactive':
         ret['result'] = True
-        ret['result'] = 'Plugin already deactivated: {0}'.format(name)
+        ret['comment'] = 'Plugin already deactivated: {0}'.format(name)
         return ret
     elif __opts__['test']:
         ret['result'] = None
-        ret['result'] = 'Plugin will be deactivated: {0}'.format(name)
+        ret['comment'] = 'Plugin will be deactivated: {0}'.format(name)
         return ret
 
     resp = __salt__['wordpress.deactivate'](name, path, user)
