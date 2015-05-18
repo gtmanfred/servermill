@@ -1,29 +1,31 @@
 # Deploy Wordpress
 My goal with this was to automate everything.
 
-## Prereqs:
-    + rackspace cloud account
-    + make a cloud network
+## Prereqs
+
++ rackspace cloud account
++ make a cloud network
 
 ## Deploy
 
 Steps:
-    - install salt master
-        * pip install pyrax
-    - configure master
-        - clone repository
-        - symlink conf to /etc/salt
-            - add cloud information to conf/cloud.providers.d/nova.conf
-            - add network uuid to conf/cloud.profiles.d/nova.conf
-                * add network cidr to pillars
-            - configure master: in conf/cloud
-            - configure gitfs in conf/master
-                * pillars
-                * states
-        - symlink runners to /srv/runners
-        - symlink reactor to /srv/reactor
-    - build cloud servers `salt-cloud -Pym map`
-    - deploy `salt-run state.orchestrate deploy`
+
+- install salt master
+    * pip install pyrax
+- configure master
+    - clone repository
+    - symlink conf to /etc/salt
+        - add cloud information to conf/cloud.providers.d/nova.conf
+        - add network uuid to conf/cloud.profiles.d/nova.conf
+            * add network cidr to pillars
+        - configure master: in conf/cloud
+        - configure gitfs in conf/master
+            * pillars
+            * states
+    - symlink runners to /srv/runners
+    - symlink reactor to /srv/reactor
+- build cloud servers `salt-cloud -Pym map`
+- deploy `salt-run state.orchestrate deploy`
 
 ## What does this do
 
