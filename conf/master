@@ -5,12 +5,12 @@ fileserver_backend:
   - minion
 
 gitfs_remotes:
-  - git@github.com:gtmanfred/servermill-salt.git:
+  - git@github.com:gtmanfred/servermill.git:
     - root: salt
     - base: master
 
 ext_pillar:
-  - git: master git@github.com:gtmanfred/servermill-salt.git root=pillars
+  - git: master git@github.com:gtmanfred/servermill root=pillars
 
 extension_modules: srv/modules
 timeout: 60
