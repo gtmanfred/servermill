@@ -1,0 +1,19 @@
+update_cachedir: True
+diff_cache_events: True
+#ssh_interface: private_ips
+change_password: True
+wait_for_ip_timeout: 6000
+display_ssh_output: False
+protocol: ipv4
+script_args: -LP git 2015.5
+minion:
+  master: intra.salt.gtmanfred.com
+  #startup_states: highstate
+  mysql.default_file: '/root/.my.cnf'
+  mine_functions:
+    network.ip_addrs: []
+  tcp_keepalive: True
+  tcp_keepalive_idle: 30
+  startup_states: sls
+  sls_list:
+    - minion

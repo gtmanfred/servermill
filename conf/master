@@ -1,0 +1,16 @@
+interface: 192.168.4.2
+fileserver_backend:
+  - git
+  - roots
+  - minion
+
+gitfs_remotes:
+  - git@github.com:gtmanfred/servermill-salt.git:
+    - root: salt
+    - base: master
+
+ext_pillar:
+  - git: master git@github.com:gtmanfred/servermill-salt.git root=pillars
+
+extension_modules: srv/modules
+timeout: 60

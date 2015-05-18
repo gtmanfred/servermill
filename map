@@ -1,0 +1,10 @@
+debian-2-nova:
+  - dbmaster.manfred.io
+  - dbslave1.manfred.io
+  - dbslave2.manfred.io
+
+centos-2-nova:
+  - blog1.manfred.io
+  - blog2.manfred.io
+  - blog3.manfred.io
+  - blog4.manfred.io
