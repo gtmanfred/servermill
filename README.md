@@ -10,22 +10,22 @@ My goal with this was to automate everything.
 
 Steps:
 
-- install salt master
+1 install salt master
     * pip install pyrax
-- configure master
-    - clone repository
-    - symlink conf to /etc/salt
-        - add cloud information to conf/cloud.providers.d/nova.conf
-        - add network uuid to conf/cloud.profiles.d/nova.conf
+1 configure master
+    1 clone repository
+    1 symlink conf to /etc/salt
+        1 add cloud information to conf/cloud.providers.d/nova.conf
+        1 add network uuid to conf/cloud.profiles.d/nova.conf
             * add network cidr to pillars
-        - configure master: in conf/cloud
-        - configure gitfs in conf/master
+        1 configure master: in conf/cloud
+        1 configure gitfs in conf/master
             * pillars
             * states
-    - symlink runners to /srv/runners
-    - symlink reactor to /srv/reactor
-- build cloud servers `salt-cloud -Pym map`
-- deploy `salt-run state.orchestrate deploy`
+    1 symlink runners to /srv/runners
+    1 symlink reactor to /srv/reactor
+1 build cloud servers `salt-cloud -Pym map`
+1 deploy `salt-run state.orchestrate deploy`
 
 ## What does this do
 
