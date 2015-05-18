@@ -124,13 +124,6 @@ remove defaults nginx:
         api_key: {{cloud['api_key']}}
         domain: {{domain}}
 
-check cloudfiles container:
-  event.send:
-    - order: last
-    - name: salt/{{domain}}/cloudfilescdn
-    - data:
-        name: {{domain}}
-
 {% endfor %}
 
 php-fpm service:

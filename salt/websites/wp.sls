@@ -8,6 +8,12 @@
     - reload_modules: True
 
 {% for domain, stuff in pillar.get('domains', {}).iteritems() %}
+check cloudfiles container:
+  event.send:
+    - name: salt/{{domain}}/cloudfilescdn
+    - data:
+        name: {{domain}}
+
 do install:
   wordpress_cli.installed:
     - path: /srv/vhosts/{{domain}}/wordpress/
